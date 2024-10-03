@@ -6,7 +6,7 @@ function validateForm() {
   const password = document.getElementById("password").value;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[0-9]{10}$/; // Simple phone validation for 10 digits
+  const phoneRegex = /^[0-9]{10}$/;
 
   if (firstName === "" || lastName === "") {
     alert("First and Last name are required");
@@ -27,6 +27,16 @@ function validateForm() {
     alert("Password must be at least 6 characters long");
     return false;
   }
+
+  const formData = {
+    first_name: firstName,
+    last_name: lastName,
+    phone_number: phone,
+    email: email,
+    password: password,
+  };
+
+  console.log(formData);
 
   alert("Form submitted successfully!");
   return true;
